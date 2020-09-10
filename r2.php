@@ -21,15 +21,27 @@
 </head>
     
   <body>
+      <?php 
+      $t1=10;
+      $t2=20;
+      $t3=30;
+      $t4=40;
+      
+      
 
-    <div class=" head">
+
+      
+      ?>
+
+    <div class=" headt">
         
             <h3>Uptimus Datalogix Billing System</h3> 
         
     </div>
       
      <div class="container">
-        <form action="r1.php" method="GET">
+     <div class="headi"><h3>Please Enter Deails</h3></div>
+        <form action="r2.php" method="GET">
        <div class="row">
        
 
@@ -39,7 +51,7 @@
                     <label>Name:</label>
                 </div>
                 <div class="col">
-                    <input type="text" name="name" class="form-control" placeholder="First name">
+                    <input type="text" name="name" class="form-control" placeholder="First name" required>
 
                 </div>
             </div>
@@ -63,6 +75,19 @@
 
                 </div>
             </div>
+
+        </br>
+        <div class="row">
+                <div class="col-sm-3">
+                    <label>City:</label>
+                </div>
+                <div class="col">
+                    <input type="text" name="city" class="form-control" placeholder="City">
+
+                </div>
+            </div>
+                 
+
                  
              
                     
@@ -128,31 +153,41 @@
            </div></div>
        </div>
        </form>
+       <?php 
+       
+       $intrst=0.18;
+       $subt=0; 
+       $subt = ($t1*$_GET["i1"])+($t2*$_GET["i2"])+($t3*$_GET["i3"])+($t4*$_GET["i4"]) ;
+       $total = $subt * $intrst +  $subt;
+       ?>
 
+
+       <form action="r3.php" method="POST">
        <div class="row">
+           
            <div class="col"></div>
 
 
            <div class="col-sm-6">
-              <h4 class="head"> Total Billing </h4>
+              <h4 class="head"> Total Billing: </h4>
 
               <div class="row">
                 <div class="col-sm-3">
-                    <label>Sub Total</label>
+                    <label>Sub Total:</label>
                 </div>
                 <div class="col">
-                    <input type="number" name="sub" class="form-control" placeholder="subtotal%" readonly>
+                    <input type="number" name="sub" class="form-control" placeholder="<?php echo $subt ?>" readonly>
     
                 </div>
             </div>
         </br>
               <div class="row">
                 <div class="col-sm-3">
-                    <label>Tax</label>
+                    <label>Interest</label>
                 </div>
                 <div class="col">
-                    <input type="number" name="tax" class="form-control" placeholder="18%" readonly>
-                        <?php echo "maan" ?>
+                    <input type="number" name="intrst" class="form-control" placeholder="18%" readonly>
+                        
                 </div>
             </div>
         </br>    
@@ -161,17 +196,23 @@
                     <label>Total</label>
                 </div>
                 <div class="col">
-                    <input type="number" name="total" class="form-control" placeholder="total" readonly>
+                    <input type="number" name="total" class="form-control" placeholder="<?php echo $total ?>" readonly>
     
                 </div>
             </div>
+            <input type="submit" class="btn btn-outline-secondary" value="Print Receipt">
            </br>
 
            </div>
 
 
            <div class="col"></div>
+        
        </div>
+    </form>
+     
+        
+    
 
      </div>
     
