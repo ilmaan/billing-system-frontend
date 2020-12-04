@@ -37,6 +37,9 @@
         
             <h3>Uptimus Datalogix Billing System</h3> 
         
+        
+        
+        
     </div>
       
      <div class="container">
@@ -74,6 +77,7 @@
                     <input type="text" name="number" class="form-control" placeholder="PhoneNumber">
 
                 </div>
+                
             </div>
 
         </br>
